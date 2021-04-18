@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
+import { Div } from "atomize";
 
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
@@ -16,7 +17,9 @@ const engine = new Styletron();
 // debug engine needs inlined source maps
 ReactDOM.render(
   <StyletronProvider value={engine} debug={debug} debugAfterHydration>
-    <App />
+    <Div w="98vw" h="98vh" d="flex">
+      <App />
+    </Div>
   </StyletronProvider>,
   document.getElementById("root")
 );

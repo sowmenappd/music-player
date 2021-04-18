@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "atomize";
 
-export default function CenteredView({ children }) {
+export default function CenteredView({ children, ...props }) {
   return (
-    <Container d="flex" justify="center" align="center" h="100vh" w="100vw">
+    <Container d="flex" justify="center" align="center" {...props}>
       {children}
     </Container>
   );
