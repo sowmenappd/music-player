@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from "react-dom";
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
@@ -18,7 +17,8 @@ const engine = new Styletron();
 ReactDOM.render(
   <StyletronProvider value={engine} debug={debug} debugAfterHydration>
     <App />
-  </StyletronProvider>, document.getElementById('root')
+  </StyletronProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
