@@ -8,9 +8,6 @@ export default function Card({ children, ...props }) {
     <Div
       d="flex"
       bg="white"
-      m={{ l: deviceSize === "xs" ? "0rem" : "2rem" }}
-      w={{ xs: "75vw", sm: "60vw", md: "45vw", lg: "35vw" }}
-      h="50%"
       align="center"
       justify="center"
       p="1rem"

@@ -23,7 +23,11 @@ export default function Login() {
           m={{ r: deviceSize === "xs" ? "0rem" : "2rem" }}
         />
       </Div>
-      <Card>
+      <Card
+        w={{ xs: "75vw", sm: "65vw", md: "45vw", lg: "35vw" }}
+        h="50%"
+        m={{ l: deviceSize === "xs" ? "0rem" : "2rem" }}
+      >
         <Div>
           <Div
             d="flex"
