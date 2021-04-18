@@ -1,5 +1,6 @@
-import { Container, Div, Image, Text, currentDevice } from "atomize";
-import { Inputfield } from "../components/InputWithRightButton";
+import { Div, Image, Text, currentDevice } from "atomize";
+import CenteredView from "../components/CenteredView";
+import { Inputfield } from "../components/Inputfield";
 import LoadingButton from "../components/LoadingButton";
 
 import IMAGES from "../constants/images";
@@ -7,7 +8,7 @@ import IMAGES from "../constants/images";
 export default function Login() {
   let deviceSize = currentDevice();
   return (
-    <Container d="flex" justify="center" align="center" h="100vh" w="100vw">
+    <CenteredView>
       <Div
         d="flex"
         align="center"
@@ -80,6 +81,6 @@ export default function Login() {
           />
         </Div>
       </Div>
-    </Container>
+    </CenteredView>
   );
 }
