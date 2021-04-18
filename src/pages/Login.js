@@ -46,7 +46,7 @@ export default function Login() {
             m={{ b: "1rem" }}
           >
             <Image src={IMAGES.music} w="30%" p="20px" />
-            <Text tag="h3" p="20px">
+            <Text tag="h2" p="20px" fontFamily="primary" textColor="black400">
               Music Player
             </Text>
           </Div>
@@ -57,12 +57,14 @@ export default function Login() {
             iconProps={{
               size: "22px",
             }}
+            fontFamily="primary"
           />
           <Inputfield
             label="Password"
             rounded="circle"
             m=".4rem"
             iconProps={{ name: "Lock", color: "brand700", size: "22px" }}
+            fontFamily="primary"
           />
           <LoadingButton
             rounded="lg"

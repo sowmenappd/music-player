@@ -5,7 +5,9 @@ import CenteredView from "../components/CenteredView";
 export default function Player() {
   return (
     <CenteredView>
-      <Text tag="h2">Player screen</Text>
+      <Text fontFamily="primary" tag="h2">
+        Player screen
+      </Text>
     </CenteredView>
   );
 }
