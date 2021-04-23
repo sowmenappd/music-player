@@ -1,10 +1,10 @@
 import { Div, Image, Text, currentDevice } from "atomize";
-import Card from "../components/Card";
-import CenteredView from "../components/CenteredView";
-import { Inputfield } from "../components/Inputfield";
-import LoadingButton from "../components/LoadingButton";
+import Card from "components/Card";
+import CenteredView from "components/CenteredView";
+import { Inputfield } from "components/Inputfield";
+import LoadingButton from "components/LoadingButton";
 
-import IMAGES from "../constants/images";
+import IMAGES from "constants/images";
 
 export default function Login() {
   let deviceSize = currentDevice();

@@ -1,5 +1,5 @@
-import Login from "./pages/Login";
-import Player from "./pages/Player";
+import Login from "pages/Login";
+import Player from "pages/Player";
 
 function App() {
   // return <Login />;
