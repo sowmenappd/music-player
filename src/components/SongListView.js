@@ -12,15 +12,15 @@ const SongListView = ({ songs, ...props }) => (
 
 const SongList = ({ songs }) => (
   <CenteredView m={{ t: "1rem" }} flexDir="column">
-    {songs?.map((song) => (
-      <SongView song={song} />
+    {songs?.map((song, i) => (
+      <SongView song={song} key={i} />
     ))}
   </CenteredView>
 );
 
 const SongView = ({ song }) => (
   <Card w="100%" shadow="0" hoverShadow="0">
-    <Text>{song}</Text>
+    <Text fontFamily="primary">{song}</Text>
   </Card>
 );
 

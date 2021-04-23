@@ -1,7 +1,7 @@
 import React from "react";
 import { Div } from "atomize";
 
-const Card = ({ children, ...props }) => {
+const Card = ({ children, noshadow, ...props }) => {
   return (
     <Div
       d="flex"
@@ -11,8 +11,8 @@ const Card = ({ children, ...props }) => {
       p="1rem"
       flexDir="column"
       rounded="lg"
-      shadow="3"
-      hoverShadow="4"
+      shadow={noshadow ? "0" : "3"}
+      hoverShadow={noshadow ? "0" : "4"}
       h="100%"
       {...props}
     >
