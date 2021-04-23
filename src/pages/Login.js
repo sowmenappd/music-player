@@ -14,7 +14,7 @@ export default function Login() {
         d="flex"
         align="center"
         justify="center"
-        w={{ xs: "0vw", sm: "55vw", md: "45vw", lg: "35vw" }}
+        w={{ xs: "0vw", sm: "0", md: "45vw", lg: "35vw" }}
         border={{ r: "1px dashed" }}
       >
         <Image

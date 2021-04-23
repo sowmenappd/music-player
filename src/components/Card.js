@@ -15,6 +15,7 @@ export default function Card({ children, ...props }) {
       rounded="lg"
       shadow="3"
       hoverShadow="4"
+      h="100%"
       {...props}
     >
       {children}
