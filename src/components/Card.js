@@ -1,9 +1,7 @@
 import React from "react";
-import { Div, currentDevice } from "atomize";
+import { Div } from "atomize";
 
-export default function Card({ children, ...props }) {
-  let deviceSize = currentDevice();
-
+const Card = ({ children, ...props }) => {
   return (
     <Div
       d="flex"
@@ -21,4 +19,6 @@ export default function Card({ children, ...props }) {
       {children}
     </Div>
   );
-}
+};
+
+export default Card;

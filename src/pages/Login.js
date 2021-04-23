@@ -1,8 +1,6 @@
 import { Div, Image, Text, currentDevice } from "atomize";
-import Card from "components/Card";
-import CenteredView from "components/CenteredView";
-import { Inputfield } from "components/Inputfield";
-import LoadingButton from "components/LoadingButton";
+
+import { Card, CenteredView, Inputfield, LoadingButton } from "components";
 
 import IMAGES from "constants/images";
 

@@ -1,6 +1,6 @@
 import { Input, Icon } from "atomize";
 
-export const Inputfield = ({ label, rounded = "sm", iconProps, ...props }) => {
+const Inputfield = ({ label, rounded = "sm", iconProps, ...props }) => {
   return (
     <Input
       placeholder={label}
@@ -23,3 +23,5 @@ export const Inputfield = ({ label, rounded = "sm", iconProps, ...props }) => {
     />
   );
 };
+
+export default Inputfield;

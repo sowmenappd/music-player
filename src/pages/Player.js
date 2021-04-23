@@ -1,8 +1,7 @@
-import { Col, Div, Row, Text } from "atomize";
+import { Col, Div, Row } from "atomize";
 import React from "react";
 
-import Card from "components/Card";
-import CenteredView from "components/CenteredView";
+import { CenteredView, SongListView, PlayerButtonPanelView } from "components";
 import { isMobile } from "hooks/useDevice";
 
 export default function Player() {
@@ -10,7 +9,7 @@ export default function Player() {
 
   return (
     <CenteredView>
-      <Div h="100vh" w="100vw">
+      <Div h="100%" w="100%">
         <Row p={{ t: "4rem" }}>
           {!_isMobile && (
             <Col size={"4"}>
@@ -29,27 +28,6 @@ export default function Player() {
   );
 }
 
-const PlayerButtonPanelView = () => (
-  <Card justify="flex-start">
-    <HeaderTitle title="Player screen" />
-    <PlayerButtonPanel />
-  </Card>
-);
-
-const PlayerButtonPanel = () => (
-  <CenteredView m={{ b: "2rem", t: "4rem" }}>
-    <PlayerButtons />
-  </CenteredView>
-);
-
-const PlayerButtons = () => (
-  <CenteredView>
-    <Card w="100%" h="6rem" bg="info300" shadow="0" hoverShadow="0">
-      test
-    </Card>
-  </CenteredView>
-);
-
 const songs = [
   "Song 1.mp3",
   "Song 2.mp3",
@@ -59,40 +37,3 @@ const songs = [
   "Song 6.mp3",
   "Song 7.mp3",
 ];
-
-const SongListView = ({ songs, ...props }) => (
-  <Card h="100%" justify="flex-start" {...props}>
-    <HeaderTitle title="Songs" bg="info600" textColor="white" />
-    <SongList songs={songs} />
-  </Card>
-);
-
-const SongList = ({ songs }) => (
-  <CenteredView m={{ t: "1rem" }} flexDir="column">
-    {songs?.map((song) => (
-      <SongView song={song} />
-    ))}
-  </CenteredView>
-);
-
-const SongView = ({ song }) => (
-  <Card w="100%" shadow="0" hoverShadow="0">
-    <Text>{song}</Text>
-  </Card>
-);
-
-const HeaderTitle = ({ title, ...props }) => (
-  <CenteredView
-    h="4rem"
-    bg="gray400"
-    d="flex"
-    w="100%"
-    border
-    rounded="lg"
-    {...props}
-  >
-    <Text fontFamily="primary" tag="h2" {...props}>
-      {title}
-    </Text>
-  </CenteredView>
-);
