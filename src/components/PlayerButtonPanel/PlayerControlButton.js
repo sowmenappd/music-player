@@ -7,15 +7,15 @@ const PlayerControlButton = ({
   onClick,
   rounded = null,
   size,
+  color,
   ...props
 }) => {
   const _Icon = (
     <Icon
       name={name}
-      color="black"
+      color={color || "black"}
       size={size}
       onClick={rounded ? null : onClick}
-      {...props}
     />
   );
 
@@ -26,7 +26,6 @@ const PlayerControlButton = ({
       bg="success100"
       hoverBg="success400"
       rounded={rounded}
-      m="1rem"
       shadow="2"
       hoverShadow="4"
       onClick={onClick}

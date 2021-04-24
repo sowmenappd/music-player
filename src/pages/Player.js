@@ -19,7 +19,7 @@ export default function Player() {
           <Col size={_isMobile ? "12" : "8"}>
             <Div>
               <PlayerButtonPanelView />
-              {_isMobile && <SongListView m={{ t: "1rem" }} songs={songs} />}
+              {_isMobile && <SongListView songs={songs} m={{ t: "1rem" }} />}
             </Div>
           </Col>
         </Row>
@@ -29,11 +29,18 @@ export default function Player() {
 }
 
 const songs = [
-  "Song 1.mp3",
-  "Song 2.mp3",
-  "Song 3.mp3",
-  "Song 4.mp3",
-  "Song 5.mp3",
-  "Song 6.mp3",
-  "Song 7.mp3",
+  { title: "Song 1.mp3", album: "Album 1" },
+  { title: "Song 2.mp3", album: "Album 2" },
+  { title: "Song 3.mp3", album: "Album 3" },
+  { title: "Song 4.mp3", album: "Album 4" },
+  { title: "Song 5.mp3", album: "Album 5" },
+  { title: "Song 6.mp3", album: "Album 6" },
+  { title: "Song 7.mp3", album: "Album 7" },
+  { title: "Song 1.mp3", album: "Album 1" },
+  { title: "Song 2.mp3", album: "Album 2" },
+  { title: "Song 3.mp3", album: "Album 3" },
+  { title: "Song 4.mp3", album: "Album 4" },
+  { title: "Song 5.mp3", album: "Album 5" },
+  { title: "Song 6.mp3", album: "Album 6" },
+  { title: "Song 7.mp3", album: "Album 7" },
 ];
