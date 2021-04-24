@@ -1,15 +1,8 @@
 import React from "react";
-import { Button, Icon } from "atomize";
+import { Button as Btn, Icon } from "atomize";
 import { isMobile } from "hooks/useDevice";
 
-const PlayerControlButton = ({
-  name,
-  onClick,
-  rounded = null,
-  size,
-  color,
-  ...props
-}) => {
+const Button = ({ name, onClick, rounded = null, size, color, ...props }) => {
   const _Icon = (
     <Icon
       name={name}
@@ -20,7 +13,7 @@ const PlayerControlButton = ({
   );
 
   return rounded ? (
-    <Button
+    <Btn
       h={isMobile() ? "4rem" : "2.5rem"}
       w={isMobile() ? "4rem" : "2.5rem"}
       bg="success100"
@@ -32,10 +25,10 @@ const PlayerControlButton = ({
       {...props}
     >
       {_Icon}
-    </Button>
+    </Btn>
   ) : (
     _Icon
   );
 };
 
-export default PlayerControlButton;
+export default Button;

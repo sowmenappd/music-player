@@ -1,17 +1,17 @@
 import { Div } from "atomize";
 
-import PlayerControlButton from "../PlayerControlButton";
+import Button from "../../Button";
 
 const ControlPanel = ({ paused, size, playHandler }) => (
   <Div d="flex" flexDir="row" align="center" justify="flex-start">
-    <PlayerControlButton name="PlayPrev" size={size} />
-    <PlayerControlButton
+    <Button name="PlayPrev" size={size} />
+    <Button
       name={paused ? "Pause" : "Play"}
       size={size}
       rounded="circle"
       onClick={() => playHandler(!paused)}
     />
-    <PlayerControlButton name="PlayNext" size={size} />
+    <Button name="PlayNext" size={size} />
   </Div>
 );
 

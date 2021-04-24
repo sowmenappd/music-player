@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Div } from "atomize";
 
 import { Card, CenteredView, HeaderTitle } from "components";
-import { ControlPanel, SidePanel, MusicInfoPanel } from "./Panels";
+import { ControlPanel, SidePanel, MusicInfoPanel } from "./Subpanels";
 import { isMobile } from "hooks/useDevice";
 
-const PlayerButtonPanelView = () => {
+const PlayerButtonPanelView = ({ ...props }) => {
   const [paused, setPaused] = useState(false);
 
   return (
-    <Card justify="flex-start" bg="info200">
+    <Card justify="flex-start" bg="info200" {...props}>
       <ParentPanel
         paused={paused}
         playHandler={setPaused}

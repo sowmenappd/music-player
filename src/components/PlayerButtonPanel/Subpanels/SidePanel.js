@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Div } from "atomize";
 
-import PlayerControlButton from "../PlayerControlButton";
+import Button from "../../Button";
 
 const SidePanel = ({ liked, size }) => {
   const [_liked, setLiked] = useState(liked);
@@ -17,7 +17,7 @@ const SidePanel = ({ liked, size }) => {
 };
 
 const HeartButton = ({ liked, size, onClick }) => (
-  <PlayerControlButton
+  <Button
     name="HeartSolid"
     size={size}
     rounded="circle"
