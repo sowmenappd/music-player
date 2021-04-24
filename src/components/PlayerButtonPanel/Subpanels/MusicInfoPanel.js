@@ -35,11 +35,7 @@ const MusicInfoPanel = ({ song }) => {
           0:00
         </Text>
         <Div w="100%">
-          <Line
-            percent="60"
-            strokeWidth="1.5"
-            // style={{ paddingTop: 16, margin: 0 }}
-          />
+          <Line percent="60" strokeWidth="1.5" />
         </Div>
         <Text fontFamily="primary" p=".5rem">
           3:45

@@ -7,14 +7,12 @@ import { isMobile } from "hooks/useDevice";
 const ButtonPanel = () => {
   return (
     <Div d="flex" flexDir="row" justify="space-around">
-      <Button
+      <CustomButton
         name="Draft"
-        // loading={true}
+        loading={false}
         loadingText="Uploading"
-        size="20px"
         onClick={null}
-        rounded="lg"
-        text={!isMobile() ? "Add Songs" : null}
+        text="Add Songs"
         textProps={{
           textColor: "black",
           textWeight: "600",
@@ -22,14 +20,12 @@ const ButtonPanel = () => {
         }}
         m={{ t: ".5rem", b: ".5rem", r: ".5rem", l: ".5rem" }}
       />
-      <Button
+      <CustomButton
         name="FolderSolid"
-        // loading={true}
+        loading={true}
         loadingText="Uploading"
-        size="20px"
         onClick={null}
-        rounded="lg"
-        text={!isMobile() ? "Change Folder" : null}
+        text="Change Folder"
         textProps={{
           textColor: "black",
           textWeight: "600",
@@ -41,5 +37,27 @@ const ButtonPanel = () => {
     </Div>
   );
 };
+
+const CustomButton = ({
+  name,
+  loading,
+  loadingText,
+  text,
+  textProps,
+  onClick = null,
+  ...props
+}) => (
+  <Button
+    name={name}
+    loading={loading}
+    loadingText={loadingText}
+    size="20px"
+    onClick={onClick}
+    rounded="lg"
+    text={!isMobile() ? text : null}
+    textProps={textProps}
+    {...props}
+  />
+);
 
 export default ButtonPanel;
