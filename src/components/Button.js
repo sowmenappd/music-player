@@ -22,19 +22,9 @@ const Button = ({
     />
   );
 
-  const calcWidth = (text) => {
-    if (text) {
-      return "100%";
-    } else {
-      return isMobile() ? "4rem" : "2.5rem";
-    }
-  };
-
   return rounded ? (
     <Btn
       disabled={loading}
-      h={isMobile() ? "4rem" : "2.5rem"}
-      w={calcWidth(text)}
       bg="success100"
       hoverBg="success400"
       rounded={rounded}
@@ -45,7 +35,11 @@ const Button = ({
       align="center"
     >
       {_Icon}
-      <Text {...textProps}>{loading && loadingText ? loadingText : text}</Text>
+      {text && (
+        <Text {...textProps}>
+          {loading && loadingText ? loadingText : text}
+        </Text>
+      )}
     </Btn>
   ) : (
     _Icon
