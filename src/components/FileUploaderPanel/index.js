@@ -2,6 +2,7 @@ import React from "react";
 
 import { Card } from "components";
 import DetailsPanel from "./Subpanels/DetailsPanel";
+import ButtonPanel from "./Subpanels/ButtonPanel";
 
 const FileUploaderPanelView = () => {
   return (
@@ -13,8 +14,11 @@ const FileUploaderPanelView = () => {
       h="100%"
       justify="space-between"
       align="center"
+      shadow="2"
+      hoverShadow="2"
     >
       <DetailsPanel />
+      <ButtonPanel />
     </Card>
   );
 };

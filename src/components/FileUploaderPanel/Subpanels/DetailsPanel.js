@@ -1,11 +1,11 @@
 import React from "react";
 import { Div, Text } from "atomize";
 
-const DetailsPanel = () => {
+const DetailsPanel = ({ folderCount = 2, songCount = 2 }) => {
   return (
     <Div d="flex" flexDir="column">
       <Text fontFamily="primary" textWeight="500">
-        2 folders, total 3 songs{" "}
+        Folders: {folderCount}, Songs: {songCount}
       </Text>
       <Text fontFamily="primary" textWeight="300">
         {" "}
