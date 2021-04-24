@@ -1,25 +1,29 @@
 import { Col, Div, Row } from "atomize";
 import React from "react";
 
-import { CenteredView, SongListView, PlayerButtonPanelView } from "components";
+import {
+  CenteredView,
+  SongListView,
+  PlayerButtonPanelView,
+  FileUploaderPanelView,
+} from "components";
 import { isMobile } from "hooks/useDevice";
 
 export default function Player() {
-  const _isMobile = isMobile();
-
   return (
     <CenteredView>
       <Div h="100%" w="100%">
         <Row p={{ t: "4rem" }}>
-          {!_isMobile && (
+          {!isMobile() && (
             <Col size={"4"}>
               <SongListView songs={songs} />
             </Col>
           )}
-          <Col size={_isMobile ? "12" : "8"}>
+          <Col size={isMobile() ? "12" : "8"}>
             <Div>
-              <PlayerButtonPanelView />
-              {_isMobile && <SongListView songs={songs} m={{ t: "1rem" }} />}
+              <FileUploaderPanelView />
+              <PlayerButtonPanelView m={{ t: "1rem" }} />
+              {isMobile() && <SongListView songs={songs} m={{ t: "1rem" }} />}
             </Div>
           </Col>
         </Row>

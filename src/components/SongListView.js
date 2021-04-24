@@ -2,8 +2,8 @@ import React from "react";
 import { Div, Text } from "atomize";
 
 import { Card, CenteredView, HeaderTitle } from "components";
-import { isDesktop } from "hooks/useDevice";
-import PlayerControlButton from "./PlayerButtonPanel/PlayerControlButton";
+import { isDesktop, isMobile } from "hooks/useDevice";
+import Button from "./Button";
 
 const SongListView = ({ songs, ...props }) => {
   return (
@@ -18,7 +18,7 @@ const SongListView = ({ songs, ...props }) => {
         />
       </Card>
       <Card
-        h={isDesktop() ? "80vh" : "30rem"}
+        h={!isMobile() ? "80vh" : "30rem"}
         justify="flex-start"
         m="0"
         overflow="auto"
@@ -62,7 +62,7 @@ const SongView = ({ song }) => (
       </Text>
     </Div>
     <Div d="flex" flexDir="row" align="center" justify="flex-end">
-      <PlayerControlButton
+      <Button
         name="Play"
         size={isDesktop() ? "32px" : "28px"}
         rounded="circle"
@@ -72,13 +72,12 @@ const SongView = ({ song }) => (
         color="white"
         onClick={null}
       />
-      <PlayerControlButton
+      <Button
         hoverBg="transparent"
         name="Plus"
         size={isDesktop() ? "32px" : "28px"}
         rounded="lg"
         m={{ l: ".5rem" }}
-        onClick={null}
         color="info700"
         onClick={() => console.log("clicked")}
       />
