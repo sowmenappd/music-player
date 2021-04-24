@@ -1,3 +1,4 @@
+import Button from "components/Button";
 import Card from "components/Card";
 import CenteredView from "components/CenteredView";
 import HeaderTitle from "components/HeaderTitle";
@@ -8,6 +9,7 @@ import PlayerButtonPanelView from "components/PlayerButtonPanel";
 import SongListView from "components/SongListView";
 
 export {
+  Button,
   Card,
   CenteredView,
   HeaderTitle,
