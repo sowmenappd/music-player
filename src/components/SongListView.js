@@ -65,6 +65,8 @@ const SongView = ({ song }) => (
       <Button
         name="Play"
         size={isDesktop() ? "32px" : "28px"}
+        h="3rem"
+        w="3rem"
         rounded="circle"
         bg="success600"
         m={{ r: ".5rem" }}
@@ -76,7 +78,9 @@ const SongView = ({ song }) => (
         hoverBg="transparent"
         name="Plus"
         size={isDesktop() ? "32px" : "28px"}
-        rounded="lg"
+        rounded="md"
+        h="3rem"
+        w="3rem"
         m={{ l: ".5rem" }}
         color="info700"
         onClick={() => console.log("clicked")}

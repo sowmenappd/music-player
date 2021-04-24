@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Div } from "atomize";
 
-import { Card, CenteredView, HeaderTitle } from "components";
+import { Card, CenteredView } from "components";
 import { ControlPanel, SidePanel, MusicInfoPanel } from "./Subpanels";
 import { isMobile } from "hooks/useDevice";
 
@@ -13,7 +13,7 @@ const PlayerButtonPanelView = ({ ...props }) => {
       <ParentPanel
         paused={paused}
         playHandler={setPaused}
-        iconSize={isMobile() ? "42px" : "28px"}
+        iconSize="28px"
         liked={false}
       />
     </Card>
@@ -22,7 +22,7 @@ const PlayerButtonPanelView = ({ ...props }) => {
 
 const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
   return (
-    <CenteredView m={{ b: "2rem", t: "2rem" }} flexDir="column">
+    <CenteredView m={{ b: "1rem", t: "1rem" }} flexDir="column">
       <Div
         h="100%"
         w="100%"

@@ -3,7 +3,7 @@ import { Div, Text } from "atomize";
 
 const DetailsPanel = ({ folderCount = 2, songCount = 2 }) => {
   return (
-    <Div d="flex" flexDir="column">
+    <Div d="flex" flexDir="column" h="4rem" justify="space-evenly">
       <Text fontFamily="primary" textWeight="500">
         Folders: {folderCount}, Songs: {songCount}
       </Text>

@@ -2,6 +2,7 @@ import React from "react";
 import { Div } from "atomize";
 
 import { Button } from "components";
+import { isMobile } from "hooks/useDevice";
 
 const ButtonPanel = () => {
   return (
@@ -13,7 +14,7 @@ const ButtonPanel = () => {
         size="20px"
         onClick={null}
         rounded="lg"
-        text="Add Songs"
+        text={!isMobile() ? "Add Songs" : null}
         textProps={{
           textColor: "black",
           textWeight: "600",
@@ -28,7 +29,7 @@ const ButtonPanel = () => {
         size="20px"
         onClick={null}
         rounded="lg"
-        text="Change Folder"
+        text={!isMobile() ? "Change Folder" : null}
         textProps={{
           textColor: "black",
           textWeight: "600",

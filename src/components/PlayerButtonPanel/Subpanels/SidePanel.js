@@ -11,12 +11,14 @@ const SidePanel = ({ liked, size }) => {
         liked={_liked}
         size={size}
         onClick={() => setLiked(!_liked)}
+        h="3rem"
+        w="3rem"
       />
     </Div>
   );
 };
 
-const HeartButton = ({ liked, size, onClick }) => (
+const HeartButton = ({ liked, size, onClick, ...props }) => (
   <Button
     name="HeartSolid"
     size={size}
@@ -25,6 +27,7 @@ const HeartButton = ({ liked, size, onClick }) => (
     hoverBg={liked ? "danger400" : "white"}
     color={liked ? "danger700" : "black"}
     onClick={onClick}
+    {...props}
   />
 );
 
