@@ -22,13 +22,13 @@ const PlayerButtonPanelView = ({ ...props }) => {
 
 const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
   return (
-    <CenteredView m={{ b: "1rem", t: "1rem" }} flexDir="column">
+    <CenteredView m={{ b: ".5rem", t: ".5rem" }} flexDir="column">
       <Div
         h="100%"
         w="100%"
         d="flex"
         flexDir="row"
-        align="center"
+        align="flex-start"
         justify="space-around"
       >
         <ControlPanel
@@ -44,7 +44,7 @@ const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
         w="100%"
         d="flex"
         flexDir="row"
-        align="center"
+        align="flex-start"
         justify="center"
       >
         {isMobile() && <MusicInfoPanel />}

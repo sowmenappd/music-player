@@ -20,19 +20,31 @@ const MusicInfoPanel = ({ song }) => {
       <Text fontFamily="primary" tag="h3" textWeight="500" p={{ b: ".5rem" }}>
         {title || "Song title"}
       </Text>
-      <Text
-        fontFamily="secondary"
-        tag="h4"
-        textWeight="300"
-        p={{ b: ".25rem" }}
-      >
+      <Text fontFamily="primary" tag="h4" textWeight="300" p={{ b: ".25rem" }}>
         {album || "Song Album"}
       </Text>
-      <Line
-        percent="60"
-        strokeWidth="1.5"
-        style={{ paddingTop: 16, margin: 0 }}
-      />
+      <Div
+        d="flex"
+        flexDir="row"
+        w="100%"
+        h="100%"
+        m={{ t: "1rem" }}
+        align="center"
+      >
+        <Text fontFamily="primary" p=".5rem">
+          0:00
+        </Text>
+        <Div w="100%">
+          <Line
+            percent="60"
+            strokeWidth="1.5"
+            // style={{ paddingTop: 16, margin: 0 }}
+          />
+        </Div>
+        <Text fontFamily="primary" p=".5rem">
+          3:45
+        </Text>
+      </Div>
     </Div>
   );
 };
