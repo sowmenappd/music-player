@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Div } from "atomize";
+import { Div, Text } from "atomize";
 
-import Button from "../../Button";
+import { Button } from "components";
 
 const loopOptions = ["no", "current", "all"];
 
@@ -31,6 +31,7 @@ const SidePanel = ({ liked, size }) => {
         }}
         h="2rem"
         w="2rem"
+        m={{ l: ".75rem" }}
       />
     </Div>
   );
@@ -38,12 +39,12 @@ const SidePanel = ({ liked, size }) => {
 
 const LoopButton = ({ loop, size, onClick, ...props }) => (
   <Button
-    name="Refresh"
+    name={loop === "no" || loop === "current" ? "Refresh" : "Bulk"}
     size={size}
     rounded="circle"
-    bg={loop === "no" ? "success300" : "white"}
-    hoverBg={loop === "no" ? "success400" : "white"}
-    color={loop === "no" ? "white" : "black"}
+    bg={loop === "no" ? "white" : "success600"}
+    hoverBg={loop === "no" ? "white" : "success800"}
+    color={loop === "no" ? "black" : "white"}
     onClick={onClick}
     {...props}
   />
