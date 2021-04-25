@@ -31,8 +31,8 @@ const Button = ({
       shadow="2"
       hoverShadow="4"
       onClick={onClick}
-      {...props}
       align="center"
+      {...props}
     >
       {_Icon}
       {text && (

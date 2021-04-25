@@ -37,7 +37,7 @@ const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
           size={iconSize}
         />
         {!isMobile() && <MusicInfoPanel />}
-        <SidePanel liked={liked} size={iconSize} />
+        <SidePanel liked={liked} size="18px" />
       </Div>
       <Div
         h="100%"

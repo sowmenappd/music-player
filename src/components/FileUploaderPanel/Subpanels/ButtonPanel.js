@@ -12,6 +12,7 @@ const ButtonPanel = () => {
         loading={false}
         loadingText="Uploading"
         onClick={null}
+        hoverBg="info600"
         text="Add Songs"
         textProps={{
           textColor: "black",
@@ -22,9 +23,10 @@ const ButtonPanel = () => {
       />
       <CustomButton
         name="FolderSolid"
-        loading={true}
+        loading={false}
         loadingText="Uploading"
         onClick={null}
+        hoverBg="info600"
         text="Change Folder"
         textProps={{
           textColor: "black",
