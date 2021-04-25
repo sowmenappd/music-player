@@ -4,7 +4,7 @@ import { Card } from "components";
 import DetailsPanel from "./Subpanels/DetailsPanel";
 import ButtonPanel from "./Subpanels/ButtonPanel";
 
-const FileUploaderPanelView = () => {
+const FileUploaderPanelView = ({ ...props }) => {
   return (
     <Card
       justify="flex-start"
@@ -16,6 +16,7 @@ const FileUploaderPanelView = () => {
       align="center"
       shadow="2"
       hoverShadow="2"
+      {...props}
     >
       <DetailsPanel />
       <ButtonPanel />

@@ -4,16 +4,17 @@ import React from "react";
 import {
   CenteredView,
   SongListView,
+  MultiViewPanel,
   PlayerButtonPanelView,
   FileUploaderPanelView,
 } from "components";
-import { isMobile } from "hooks/useDevice";
+import { isMobile, isTablet } from "hooks/useDevice";
 
 export default function Player() {
   return (
     <CenteredView>
       <Div h="100%" w="100%">
-        <Row p={{ t: "4rem" }}>
+        <Row p={{ t: isMobile() || isTablet() ? "2rem" : "4rem" }}>
           {!isMobile() && (
             <Col size={"4"}>
               <SongListView songs={songs} />
@@ -21,7 +22,8 @@ export default function Player() {
           )}
           <Col size={isMobile() ? "12" : "8"}>
             <Div>
-              <FileUploaderPanelView />
+              <MultiViewPanel />
+              <FileUploaderPanelView m={{ t: "1rem" }} />
               <PlayerButtonPanelView m={{ t: "1rem" }} />
               {isMobile() && <SongListView songs={songs} m={{ t: "1rem" }} />}
             </Div>
