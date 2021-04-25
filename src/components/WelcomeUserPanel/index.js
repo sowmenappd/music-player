@@ -17,6 +17,7 @@ const MultiViewPanel = ({ ...props }) => {
         justify="space-between"
         align="center"
         overflow="hidden"
+        textColor="white"
       >
         <Div d="flex" flexDir="column" justify="space-evenly" h="100%" p="1rem">
           <Div>
