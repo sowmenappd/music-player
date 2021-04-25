@@ -10,7 +10,7 @@ const SongListView = ({ songs, ...props }) => {
     <Div>
       <Card noshadow p="0" {...props}>
         <HeaderTitle
-          title="Songs"
+          title="Up next"
           bg="info500"
           align="center"
           textColor="white"

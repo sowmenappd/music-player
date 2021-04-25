@@ -9,7 +9,7 @@ const PlayerButtonPanelView = ({ ...props }) => {
   const [paused, setPaused] = useState(false);
 
   return (
-    <Card justify="flex-start" bg="info200" {...props}>
+    <Card justify="flex-start" bg="warning600" {...props}>
       <ParentPanel
         paused={paused}
         playHandler={setPaused}
