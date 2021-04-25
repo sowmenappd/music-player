@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Div, Text } from "atomize";
 
 import { Card, CenteredView, HeaderTitle } from "components";
@@ -38,55 +38,63 @@ const SongList = ({ songs }) => (
   </CenteredView>
 );
 
-const SongView = ({ song }) => (
-  <Card
-    w="100%"
-    h="100%"
-    noshadow
-    d="flex"
-    flexDir="row"
-    justify="space-between"
-  >
-    <Div
-      h="50px"
+const SongView = ({ song }) => {
+  const [hovered, setHovering] = useState(false);
+
+  return (
+    <Card
+      w="100%"
+      h="100%"
+      noshadow
       d="flex"
-      flexDir="column"
-      align="flex-start"
+      flexDir="row"
       justify="space-between"
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
     >
-      <Text fontFamily="primary" textWeight="500">
-        {song.title}
-      </Text>
-      <Text fontFamily="primary" textWeight="300">
-        {song.album}
-      </Text>
-    </Div>
-    <Div d="flex" flexDir="row" align="center" justify="flex-end">
-      <Button
-        name="Play"
-        size={isDesktop() ? "32px" : "28px"}
-        h="3rem"
-        w="3rem"
-        rounded="circle"
-        bg="success600"
-        m={{ r: ".5rem" }}
-        hoverBg="success700"
-        color="white"
-        onClick={null}
-      />
-      <Button
-        hoverBg="transparent"
-        name="Plus"
-        size={isDesktop() ? "32px" : "28px"}
-        rounded="md"
-        h="3rem"
-        w="3rem"
-        m={{ l: ".5rem" }}
-        color="info700"
-        onClick={() => console.log("clicked")}
-      />
-    </Div>
-  </Card>
-);
+      <Div
+        h="50px"
+        d="flex"
+        flexDir="column"
+        align="flex-start"
+        justify="space-between"
+      >
+        <Text fontFamily="primary" textWeight="500">
+          {song.title}
+        </Text>
+        <Text fontFamily="primary" textWeight="300">
+          {song.album}
+        </Text>
+      </Div>
+      {hovered && (
+        <Div d="flex" flexDir="row" align="center" justify="flex-end">
+          <Button
+            name="Play"
+            size={isDesktop() ? "32px" : "28px"}
+            h="3rem"
+            w="3rem"
+            rounded="circle"
+            bg="success600"
+            m={{ r: ".5rem" }}
+            hoverBg="success700"
+            color="white"
+            onClick={null}
+          />
+          <Button
+            hoverBg="transparent"
+            name="Plus"
+            size={isDesktop() ? "32px" : "28px"}
+            rounded="md"
+            h="3rem"
+            w="3rem"
+            m={{ l: ".5rem" }}
+            color="info700"
+            onClick={() => console.log("clicked")}
+          />
+        </Div>
+      )}
+    </Card>
+  );
+};
 
 export default SongListView;
