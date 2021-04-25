@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import "index.css";
 import reportWebVitals from "./reportWebVitals";
 
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Div, ThemeProvider } from "atomize";
+import { isDesktop } from "hooks/useDevice";
 
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
@@ -24,7 +26,13 @@ const theme = {
 // debug engine needs inlined source maps
 ReactDOM.render(
   <StyletronProvider value={engine} debug={debug} debugAfterHydration>
-    <Div w="100%" h="100%">
+    <Div
+      w="100vw"
+      h={isDesktop() ? "100vh" : "100%"}
+      bg="#252737"
+      p="0rem"
+      m="0rem"
+    >
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>

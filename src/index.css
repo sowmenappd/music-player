@@ -1,4 +1,12 @@
 body {
   padding: 0px;
-  margin: 0px;
+  margin: 0rem;
+  padding-left: -1.24rem;
+  background-color: "#252737";
+  width: "100vw";
+  height: "100vh";
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

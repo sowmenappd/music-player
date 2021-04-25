@@ -1,6 +1,5 @@
 import React from "react";
 import { Button as Btn, Icon, Text } from "atomize";
-import { isMobile } from "hooks/useDevice";
 
 const Button = ({
   name,
