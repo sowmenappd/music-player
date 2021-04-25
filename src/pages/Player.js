@@ -15,7 +15,7 @@ export default function Player() {
     <CenteredView
       h={isDesktop() ? "100vh" : "100%"}
       w="100%"
-      p={{ l: "2rem", r: "2rem", b: "5rem" }}
+      p={{ l: "1rem", r: "1rem", b: "5rem" }}
     >
       <Div h="100%" w="100%" p="0rem" m="0rem">
         <Row p={{ t: isMobile() || isTablet() ? "2rem" : "4rem" }} m="0rem">
