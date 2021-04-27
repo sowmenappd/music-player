@@ -5,7 +5,7 @@ import { Card, CustomCard } from "components";
 import IMAGES from "constants/images";
 import { isMobile } from "hooks/useDevice";
 
-const MultiViewPanel = ({ ...props }) => {
+const WelcomeUserPanel = ({ ...props }) => {
   return (
     <CustomCard bg="#553EB566" p="0rem" {...props}>
       <Div
@@ -59,4 +59,4 @@ const MultiViewPanel = ({ ...props }) => {
   );
 };
 
-export default MultiViewPanel;
+export default WelcomeUserPanel;
