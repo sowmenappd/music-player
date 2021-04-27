@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card, CustomCard } from "components";
+import { CustomCard } from "components";
 import DetailsPanel from "./Subpanels/DetailsPanel";
 import ButtonPanel from "./Subpanels/ButtonPanel";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Div, Image, Text } from "atomize";
 
-import { Card, CustomCard } from "components";
+import { CustomCard } from "components";
 import IMAGES from "constants/images";
 import { isMobile } from "hooks/useDevice";
 
