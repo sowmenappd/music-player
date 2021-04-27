@@ -8,6 +8,7 @@ import Inputfield from "components/Inputfield";
 import LoadingButton from "components/LoadingButton";
 
 // views
+import CategoriesPanel from "components/CategoriesPanel";
 import FileUploaderPanelView from "components/FileUploaderPanel";
 import WelcomeUserPanel from "components/WelcomeUserPanel";
 import PlayerButtonPanelView from "components/PlayerButtonPanel";
@@ -22,8 +23,9 @@ export {
   HeaderTitle,
   Inputfield,
   LoadingButton,
+  CategoriesPanel,
   FileUploaderPanelView,
-  WelcomeUserPanel as MultiViewPanel,
+  WelcomeUserPanel,
   PlayerButtonPanelView,
   SongListView,
 };

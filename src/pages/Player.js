@@ -4,7 +4,8 @@ import React from "react";
 import {
   CenteredView,
   SongListView,
-  MultiViewPanel,
+  CategoriesPanel,
+  WelcomeUserPanel,
   PlayerButtonPanelView,
   FileUploaderPanelView,
 } from "components";
@@ -26,9 +27,10 @@ export default function Player() {
           )}
           <Col size={isMobile() ? "12" : "8"} m="0rem">
             <Div m="0rem" p="0rem">
-              <MultiViewPanel />
+              <WelcomeUserPanel />
               <FileUploaderPanelView m={{ t: "1rem" }} />
               <PlayerButtonPanelView m={{ t: "1rem" }} />
+              <CategoriesPanel m={{ t: "1rem" }} />
               {isMobile() && <SongListView songs={songs} m={{ t: "1rem" }} />}
             </Div>
           </Col>
