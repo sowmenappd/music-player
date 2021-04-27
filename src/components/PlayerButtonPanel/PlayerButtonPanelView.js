@@ -4,14 +4,23 @@ import { CustomCard, Flex } from "components";
 import { ControlPanel, SidePanel, MusicInfoPanel } from "./Subpanels";
 import { isMobile } from "hooks/useDevice";
 
+import song from "resources/test_sounds/Fade.mp3";
+
 const PlayerButtonPanelView = ({ ...props }) => {
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useState(true);
+
+  const handlePaused = (paused) => {
+    setPaused(paused);
+    if (!paused) document.getElementById("player").play();
+    else document.getElementById("player").pause();
+  };
 
   return (
     <CustomCard flexDir="column" bg="warning600" {...props}>
+      <audio id="player" src={song} autoPlay={false} />
       <ParentPanel
         paused={paused}
-        playHandler={setPaused}
+        playHandler={() => handlePaused(!paused)}
         iconSize="28px"
         liked={false}
       />
