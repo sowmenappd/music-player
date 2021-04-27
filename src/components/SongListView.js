@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Div, Icon, Text } from "atomize";
+import CustomScroller from "react-custom-scroller";
 
-import { Card, CustomCard, CenteredView, Flex, HeaderTitle } from "components";
+import {
+  Button,
+  Card,
+  CustomCard,
+  CenteredView,
+  Flex,
+  HeaderTitle,
+} from "components";
 import { isDesktop, isMobile } from "hooks/useDevice";
-import Button from "./Button";
 
 const SongListView = ({ songs, currentSongId, ...props }) => {
   return (
@@ -31,11 +38,15 @@ const SongListView = ({ songs, currentSongId, ...props }) => {
 };
 
 const SongList = ({ songs, currentSongId }) => (
-  <CenteredView flexDir="column" p="0">
-    {songs?.map((song, i) => (
-      <SongView song={song} key={i} isPlaying={currentSongId === i} />
-    ))}
-  </CenteredView>
+  <CustomScroller
+    style={{ overflowY: "scroll", width: "100%", paddingRight: 20 }}
+  >
+    <CenteredView flexDir="column" p="0">
+      {songs?.map((song, i) => (
+        <SongView song={song} key={i} isPlaying={currentSongId === i} />
+      ))}
+    </CenteredView>
+  </CustomScroller>
 );
 
 const SongView = ({ song, isPlaying }) => {
