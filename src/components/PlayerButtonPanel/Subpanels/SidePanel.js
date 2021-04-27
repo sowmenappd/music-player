@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Div, Text } from "atomize";
+import { Div } from "atomize";
 
 import { Button } from "components";
 
@@ -57,7 +57,7 @@ const HeartButton = ({ liked, size, onClick, ...props }) => (
     rounded="circle"
     bg={liked ? "danger300" : "white"}
     hoverBg={liked ? "danger400" : "white"}
-    color={liked ? "danger700" : "black"}
+    iconColor={liked ? "danger700" : "black"}
     onClick={onClick}
     {...props}
   />

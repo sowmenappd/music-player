@@ -1,5 +1,5 @@
 import React from "react";
-import { Button as Btn, Icon, Text } from "atomize";
+import { Button as Btn, Div, Icon, Text } from "atomize";
 
 const Button = ({
   name,
@@ -7,7 +7,7 @@ const Button = ({
   onClick,
   rounded = null,
   size,
-  color,
+  iconColor,
   ...props
 }) => {
   const { textProps, loading, loadingText } = props;
@@ -15,7 +15,7 @@ const Button = ({
   const _Icon = (
     <Icon
       name={loading ? "Loading" : name}
-      color={color || "black"}
+      color={iconColor || "black"}
       size={size}
       onClick={rounded ? null : onClick}
     />
@@ -30,15 +30,16 @@ const Button = ({
       shadow="2"
       hoverShadow="4"
       onClick={onClick}
-      align="center"
       {...props}
     >
-      {_Icon}
-      {text && (
-        <Text {...textProps}>
-          {loading && loadingText ? loadingText : text}
-        </Text>
-      )}
+      <Div d="flex" align="center">
+        {_Icon}
+        {text && (
+          <Text {...textProps}>
+            {loading && loadingText ? loadingText : text}
+          </Text>
+        )}
+      </Div>
     </Btn>
   ) : (
     _Icon
