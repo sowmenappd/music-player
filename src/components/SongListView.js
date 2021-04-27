@@ -20,7 +20,7 @@ const SongListView = ({ songs, currentSongId, ...props }) => {
       <Card
         h={!isMobile() ? "80vh" : "30rem"}
         justify="flex-start"
-        m="0"
+        m={{ b: isMobile() ? "1rem" : "0rem" }}
         overflow="auto"
         scroll-y="hidden"
       >

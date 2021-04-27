@@ -2,7 +2,7 @@ import React from "react";
 import { Div, Text } from "atomize";
 import { CustomCard, Button } from "components";
 
-const CategoriesHeaderPanel = ({ ...props }) => {
+const HeaderSubpanel = ({ ...props }) => {
   return (
     <CustomCard bg="#373537" {...props} flexDir="column">
       <TopText />
@@ -83,4 +83,4 @@ const CategoryButtonList = ({ listItems, ...props }) => {
   );
 };
 
-export default CategoriesHeaderPanel;
+export default HeaderSubpanel;

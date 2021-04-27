@@ -9,15 +9,11 @@ import {
   PlayerButtonPanelView,
   FileUploaderPanelView,
 } from "components";
-import { isDesktop, isMobile, isTablet } from "hooks/useDevice";
+import { isMobile, isTablet } from "hooks/useDevice";
 
 export default function Player() {
   return (
-    <CenteredView
-      h={isDesktop() ? "100%" : "100%"}
-      w="100%"
-      p={{ l: "1rem", r: "1rem", b: "5rem" }}
-    >
+    <CenteredView w="100%" h="100vh" p={{ l: "1rem", r: "1rem" }}>
       <Div h="100%" w="100%" p="0rem" m="0rem">
         <Row p={{ t: isMobile() || isTablet() ? "2rem" : "4rem" }} m="0rem">
           {!isMobile() && (
@@ -31,7 +27,9 @@ export default function Player() {
               <FileUploaderPanelView m={{ t: "1rem" }} />
               <PlayerButtonPanelView m={{ t: "1rem" }} />
               <CategoriesPanel m={{ t: "1rem" }} />
-              {isMobile() && <SongListView songs={songs} m={{ t: "1rem" }} />}
+              {isMobile() && (
+                <SongListView songs={songs} m={{ t: "1rem", b: "1rem" }} />
+              )}
             </Div>
           </Col>
         </Row>

@@ -1,7 +1,19 @@
+import { Div } from "atomize";
 import Player from "pages/Player";
 
 function App() {
-  return <Player />;
+  return (
+    <Div
+      pos="absolute"
+      bg="#252737"
+      w="100vw"
+      h="100vh"
+      overflow="scroll"
+      style={{ marginBottom: "230px" }}
+    >
+      <Player />
+    </Div>
+  );
 }
 
 export default App;

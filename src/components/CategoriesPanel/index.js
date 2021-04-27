@@ -1,12 +1,12 @@
 import React from "react";
 import { Div } from "atomize";
 
-import HeaderPanel from "./Subpanels/CategoriesHeaderPanel";
+import HeaderSubpanel from "./Subpanels/CategoriesHeaderPanel";
 
 const CategoriesPanel = ({ ...props }) => {
   return (
     <Div d="flex" flexDir="column" {...props}>
-      <HeaderPanel />
+      <HeaderSubpanel />
     </Div>
   );
 };

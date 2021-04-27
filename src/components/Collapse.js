@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, Collapse as Colp, Tag, Anchor, Icon } from "atomize";
+import { Div, Collapse as Colp } from "atomize";
 
 export default class Collapse extends React.Component {
   render() {
