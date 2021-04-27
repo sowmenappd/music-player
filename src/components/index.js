@@ -3,6 +3,7 @@ import Card from "components/Card";
 import CustomAppCard from "components/CustomAppCard";
 import CenteredView from "components/CenteredView";
 import Collapse from "components/Collapse";
+import Flex from "components/Flex";
 import HeaderTitle from "components/HeaderTitle";
 import Inputfield from "components/Inputfield";
 import LoadingButton from "components/LoadingButton";
@@ -20,6 +21,7 @@ export {
   CustomAppCard as CustomCard,
   CenteredView,
   Collapse,
+  Flex,
   HeaderTitle,
   Inputfield,
   LoadingButton,
