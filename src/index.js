@@ -26,13 +26,7 @@ const theme = {
 // debug engine needs inlined source maps
 ReactDOM.render(
   <StyletronProvider value={engine} debug={debug} debugAfterHydration>
-    <Div
-      w="100vw"
-      h={isDesktop() ? "100vh" : "100%"}
-      bg="#252737"
-      p="0rem"
-      m="0rem"
-    >
+    <Div w="100vw" h="100%" bg="#252737" p="0rem" m="0rem">
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>

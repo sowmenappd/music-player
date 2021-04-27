@@ -14,7 +14,7 @@ import { isDesktop, isMobile, isTablet } from "hooks/useDevice";
 export default function Player() {
   return (
     <CenteredView
-      h={isDesktop() ? "100vh" : "100%"}
+      h={isDesktop() ? "100%" : "100%"}
       w="100%"
       p={{ l: "1rem", r: "1rem", b: "5rem" }}
     >
