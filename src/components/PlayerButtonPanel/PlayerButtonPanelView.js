@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Div } from "atomize";
 
-import { Card, CenteredView } from "components";
+import { CustomCard } from "components";
 import { ControlPanel, SidePanel, MusicInfoPanel } from "./Subpanels";
 import { isMobile } from "hooks/useDevice";
 
@@ -9,23 +9,23 @@ const PlayerButtonPanelView = ({ ...props }) => {
   const [paused, setPaused] = useState(false);
 
   return (
-    <Card justify="flex-start" bg="warning600" {...props}>
+    <CustomCard flexDir="column" bg="warning600" {...props}>
       <ParentPanel
         paused={paused}
         playHandler={setPaused}
         iconSize="28px"
         liked={false}
       />
-    </Card>
+    </CustomCard>
   );
 };
 
 const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
   return (
-    <CenteredView m={{ b: ".5rem", t: ".5rem" }} flexDir="column">
+    <>
       <Div
         h="100%"
-        w="100%"
+        w="90%"
         d="flex"
         flexDir="row"
         align="flex-start"
@@ -39,17 +39,19 @@ const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
         {!isMobile() && <MusicInfoPanel />}
         <SidePanel liked={liked} size="18px" />
       </Div>
-      <Div
-        h="100%"
-        w="100%"
-        d="flex"
-        flexDir="row"
-        align="flex-start"
-        justify="center"
-      >
-        {isMobile() && <MusicInfoPanel />}
-      </Div>
-    </CenteredView>
+      {isMobile() && (
+        <Div
+          h="100%"
+          w="100%"
+          d="flex"
+          flexDir="row"
+          align="flex-start"
+          justify="center"
+        >
+          <MusicInfoPanel />
+        </Div>
+      )}
+    </>
   );
 };
 

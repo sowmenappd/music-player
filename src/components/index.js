@@ -1,5 +1,6 @@
 import Button from "components/Button";
 import Card from "components/Card";
+import CustomAppCard from "components/CustomAppCard";
 import CenteredView from "components/CenteredView";
 import Collapse from "components/Collapse";
 import HeaderTitle from "components/HeaderTitle";
@@ -15,6 +16,7 @@ import SongListView from "components/SongListView";
 export {
   Button,
   Card,
+  CustomAppCard as CustomCard,
   CenteredView,
   Collapse,
   HeaderTitle,

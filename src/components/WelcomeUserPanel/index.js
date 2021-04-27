@@ -1,17 +1,16 @@
 import React from "react";
 import { Div, Image, Text } from "atomize";
 
-import { Card } from "components";
+import { Card, CustomCard } from "components";
 import IMAGES from "constants/images";
 import { isMobile } from "hooks/useDevice";
 
 const MultiViewPanel = ({ ...props }) => {
   return (
-    <Card bg="#553EB566" shadow="2" hoverShadow="2" p="0" {...props}>
+    <CustomCard bg="#553EB566" p="0rem" {...props}>
       <Div
         d="flex"
         flexDir="row"
-        flex="1"
         w="100%"
         h="10rem"
         justify="space-between"
@@ -56,7 +55,7 @@ const MultiViewPanel = ({ ...props }) => {
           <Image src={IMAGES.music_walk} />
         </Div>
       </Div>
-    </Card>
+    </CustomCard>
   );
 };
 
