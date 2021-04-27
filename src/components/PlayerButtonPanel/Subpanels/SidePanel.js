@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Div } from "atomize";
 
-import { Button } from "components";
+import { Button, Flex } from "components";
 
 const loopOptions = ["no", "current", "all"];
 
@@ -9,12 +8,7 @@ const SidePanel = ({ liked, size }) => {
   const [_liked, setLiked] = useState(liked);
   const [loopIdx, setLoopingIdx] = useState(0);
   return (
-    <Div
-      d="flex"
-      flexDir="row"
-      justify="center"
-      p={{ t: "0.4rem", r: "0.2rem" }}
-    >
+    <Flex w="" justify="center" p={{ t: "0.4rem", r: "0.2rem" }}>
       <HeartButton
         liked={_liked}
         size={size}
@@ -33,7 +27,7 @@ const SidePanel = ({ liked, size }) => {
         w="2rem"
         m={{ l: ".75rem" }}
       />
-    </Div>
+    </Flex>
   );
 };
 

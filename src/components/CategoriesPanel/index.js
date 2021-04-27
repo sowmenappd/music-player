@@ -1,13 +1,13 @@
 import React from "react";
-import { Div } from "atomize";
 
+import { Flex } from "components";
 import HeaderSubpanel from "./Subpanels/CategoriesHeaderPanel";
 
 const CategoriesPanel = ({ ...props }) => {
   return (
-    <Div d="flex" flexDir="column" {...props}>
+    <Flex col {...props}>
       <HeaderSubpanel />
-    </Div>
+    </Flex>
   );
 };
 

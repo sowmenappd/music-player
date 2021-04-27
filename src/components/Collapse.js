@@ -1,6 +1,8 @@
 import React from "react";
 import { Div, Collapse as Colp } from "atomize";
 
+import { Flex } from "components";
+
 export default class Collapse extends React.Component {
   render() {
     const {
@@ -12,20 +14,20 @@ export default class Collapse extends React.Component {
     const children = this.props.children;
 
     return (
-      <Div d="flex" flexDir="column" bg="transparent" rounded="xl">
+      <Flex col bg="transparent" rounded="xl">
         {this.props.button}
         <Colp isOpen={showCollapse} {...collapseProps} justify="flex-end">
           {children && (
             <Div bg="gray100" rounded="xl" {...bgProps}>
               {children.map((name, index) => (
-                <Div key={index} d="flex" {...this.props.cellProps(index)}>
+                <Flex key={index} {...this.props.cellProps(index)}>
                   {name}
-                </Div>
+                </Flex>
               ))}
             </Div>
           )}
         </Colp>
-      </Div>
+      </Flex>
     );
   }
 }

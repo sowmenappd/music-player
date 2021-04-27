@@ -18,7 +18,7 @@ export default function Player() {
         <Row p={{ t: isMobile() || isTablet() ? "2rem" : "4rem" }} m="0rem">
           {!isMobile() && (
             <Col size={"4"} m="0rem">
-              <SongListView songs={songs} currentSongId={0} />
+              <SongListView songs={songs} currentSongId={0} m={{ b: "1rem" }} />
             </Col>
           )}
           <Col size={isMobile() ? "12" : "8"} m="0rem">
@@ -28,7 +28,11 @@ export default function Player() {
               <PlayerButtonPanelView m={{ t: "1rem" }} />
               <CategoriesPanel m={{ t: "1rem" }} />
               {isMobile() && (
-                <SongListView songs={songs} m={{ t: "1rem", b: "1rem" }} />
+                <SongListView
+                  songs={songs}
+                  currentSongId={0}
+                  m={{ t: "1rem", b: "1rem" }}
+                />
               )}
             </Div>
           </Col>

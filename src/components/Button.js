@@ -1,5 +1,6 @@
 import React from "react";
-import { Button as Btn, Div, Icon, Text } from "atomize";
+import { Button as Btn, Icon, Text } from "atomize";
+import { Flex } from "components";
 
 const Button = ({
   name,
@@ -32,14 +33,14 @@ const Button = ({
       onClick={onClick}
       {...props}
     >
-      <Div d="flex" align="center">
+      <Flex w="" align="center">
         {_Icon}
         {text && (
           <Text {...textProps}>
             {loading && loadingText ? loadingText : text}
           </Text>
         )}
-      </Div>
+      </Flex>
     </Btn>
   ) : (
     _Icon

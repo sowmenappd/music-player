@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Div, Text } from "atomize";
 import { Line } from "rc-progress";
+
 import { isMobile } from "hooks/useDevice";
+import { Flex } from "components";
 
 const px = "5px";
 
@@ -10,11 +12,8 @@ const MusicInfoPanel = ({ song }) => {
 
   const { title, album } = song | null;
   return (
-    <Div
-      w="100%"
-      h="100%"
-      d="flex"
-      flexDir="column"
+    <Flex
+      col
       align="center"
       textAlign="center"
       p={{ l: px, r: px, t: isMobile() ? "1rem" : "0rem", b: "0rem" }}
@@ -25,15 +24,7 @@ const MusicInfoPanel = ({ song }) => {
       <Text fontFamily="primary" tag="h4" textWeight="300" p={{ b: ".25rem" }}>
         {album || "Song Album"}
       </Text>
-      <Div
-        d="flex"
-        flexDir="row"
-        w="100%"
-        h="100%"
-        m={{ t: "1rem" }}
-        align="center"
-        justify="space-between"
-      >
+      <Flex m={{ t: "1rem" }} align="center" justify="space-between">
         <Text fontFamily="primary" p=".5rem">
           0:00
         </Text>
@@ -43,8 +34,8 @@ const MusicInfoPanel = ({ song }) => {
         <Text fontFamily="primary" p=".5rem">
           3:45
         </Text>
-      </Div>
-    </Div>
+      </Flex>
+    </Flex>
   );
 };
 

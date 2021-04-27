@@ -4,7 +4,7 @@ import { Collapse } from "components";
 
 const CategoryCollapse = ({ showCollapse }) => {
   return (
-    <Div justify="center" w="100%" m={{ t: "1rem" }}>
+    <Flex justify="center" w="100%" m={{ t: "1rem" }}>
       <Collapse
         showCollapse={showCollapse}
         button={
@@ -24,12 +24,9 @@ const CategoryCollapse = ({ showCollapse }) => {
           justify: "left",
         }}
       >
-        <Div>1</Div>
-        <Div>2</Div>
-        <Div>3</Div>
-        <Div>1</Div>
+        {/* Output the children */}
       </Collapse>
-    </Div>
+    </Flex>
   );
 };
 

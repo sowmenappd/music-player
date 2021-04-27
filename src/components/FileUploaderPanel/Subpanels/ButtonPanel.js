@@ -1,12 +1,11 @@
 import React from "react";
-import { Div } from "atomize";
 
-import { Button } from "components";
+import { Button, Flex } from "components";
 import { isMobile } from "hooks/useDevice";
 
 const ButtonPanel = () => {
   return (
-    <Div d="flex" flexDir="row" justify="space-around">
+    <Flex justify="flex-end">
       <CustomButton
         name="Draft"
         loading={false}
@@ -36,7 +35,7 @@ const ButtonPanel = () => {
         }}
         m={{ t: ".5rem", b: ".5rem", l: ".5rem", r: ".5rem" }}
       />
-    </Div>
+    </Flex>
   );
 };
 

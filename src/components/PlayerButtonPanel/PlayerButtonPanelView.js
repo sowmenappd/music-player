@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Div } from "atomize";
 
-import { CustomCard } from "components";
+import { CustomCard, Flex } from "components";
 import { ControlPanel, SidePanel, MusicInfoPanel } from "./Subpanels";
 import { isMobile } from "hooks/useDevice";
 
@@ -23,14 +22,7 @@ const PlayerButtonPanelView = ({ ...props }) => {
 const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
   return (
     <>
-      <Div
-        h="100%"
-        w="90%"
-        d="flex"
-        flexDir="row"
-        align="flex-start"
-        justify="space-around"
-      >
+      <Flex w="90%" align="flex-start" justify="space-around">
         <ControlPanel
           paused={paused}
           playHandler={playHandler}
@@ -38,18 +30,11 @@ const ParentPanel = ({ liked, paused, playHandler, iconSize }) => {
         />
         {!isMobile() && <MusicInfoPanel />}
         <SidePanel liked={liked} size="18px" />
-      </Div>
+      </Flex>
       {isMobile() && (
-        <Div
-          h="100%"
-          w="100%"
-          d="flex"
-          flexDir="row"
-          align="flex-start"
-          justify="center"
-        >
+        <Flex align="flex-start" justify="center">
           <MusicInfoPanel />
-        </Div>
+        </Flex>
       )}
     </>
   );

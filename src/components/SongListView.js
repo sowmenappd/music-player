@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Div, Icon, Text } from "atomize";
 
-import { Card, CustomCard, CenteredView, HeaderTitle } from "components";
+import { Card, CustomCard, CenteredView, Flex, HeaderTitle } from "components";
 import { isDesktop, isMobile } from "hooks/useDevice";
 import Button from "./Button";
 
 const SongListView = ({ songs, currentSongId, ...props }) => {
   return (
     <Div>
-      <Card noshadow p="0" {...props}>
+      <Card p="0" {...props}>
         <HeaderTitle
           title="Up next"
           bg="info500"
@@ -49,19 +49,19 @@ const SongView = ({ song, isPlaying }) => {
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
-      <Div h="50px" d="flex" flexDir="column" justify="space-between">
-        <Div d="flex" flexDir="row" align="center">
+      <Flex col h="50px" justify="space-between">
+        <Flex align="center">
           <Text fontFamily="primary" textWeight="500">
             {song.title}
           </Text>
           {isPlaying && <Icon name="Loading3" m={{ l: ".35rem" }} />}
-        </Div>
+        </Flex>
         <Text fontFamily="primary" textWeight="300">
           {song.album}
         </Text>
-      </Div>
+      </Flex>
       {hovered && (
-        <Div d="flex" flexDir="row" align="center" justify="flex-end">
+        <Flex align="center" justify="flex-end">
           <Button
             name="Play"
             size={isDesktop() ? "32px" : "28px"}
@@ -85,7 +85,7 @@ const SongView = ({ song, isPlaying }) => {
             color="info700"
             onClick={() => console.log("clicked")}
           />
-        </Div>
+        </Flex>
       )}
     </CustomCard>
   );

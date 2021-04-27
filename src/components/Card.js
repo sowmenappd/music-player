@@ -1,21 +1,19 @@
 import React from "react";
-import { Div } from "atomize";
+import { Flex } from "components";
 
 const Card = ({ children, noshadow, ...rProps }) => {
   return (
-    <Div
-      d="flex"
-      bg="white"
+    <Flex
+      col
       align="center"
       justify="center"
+      bg="white"
       p="1rem"
-      flexDir="column"
       rounded="lg"
-      h="100%"
       {...rProps}
     >
       {children}
-    </Div>
+    </Flex>
   );
 };
 

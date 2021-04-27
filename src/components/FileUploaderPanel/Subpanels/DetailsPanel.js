@@ -1,9 +1,10 @@
 import React from "react";
-import { Div, Text } from "atomize";
+import { Text } from "atomize";
+import { Flex } from "components";
 
 const DetailsPanel = ({ folderCount = 2, songCount = 2 }) => {
   return (
-    <Div d="flex" flexDir="column" h="4rem" justify="space-evenly">
+    <Flex col h="4rem" justify="space-evenly">
       <Text fontFamily="primary" textWeight="500">
         Folders: {folderCount}, Songs: {songCount}
       </Text>
@@ -11,7 +12,7 @@ const DetailsPanel = ({ folderCount = 2, songCount = 2 }) => {
         {" "}
         D:/Music{" "}
       </Text>
-    </Div>
+    </Flex>
   );
 };
 

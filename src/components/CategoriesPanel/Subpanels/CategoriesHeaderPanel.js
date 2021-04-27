@@ -1,6 +1,6 @@
 import React from "react";
-import { Div, Text } from "atomize";
-import { CustomCard, Button } from "components";
+import { Text } from "atomize";
+import { CustomCard, Button, Flex } from "components";
 
 const HeaderSubpanel = ({ ...props }) => {
   return (
@@ -34,7 +34,7 @@ const HeaderSubpanel = ({ ...props }) => {
 };
 
 const TopText = () => (
-  <Div w="100%" h="5rem" d="flex" flexDir="column" justify="space-around">
+  <Flex h="5rem" col justify="space-around">
     <Text
       fontFamily="primary"
       tag="h2"
@@ -53,13 +53,13 @@ const TopText = () => (
     >
       Filter songs by artist, genre, and albums.
     </Text>
-  </Div>
+  </Flex>
 );
 
 const CategoryButtonList = ({ listItems, ...props }) => {
   return (
     listItems && (
-      <Div w="100%" h="3rem" d="flex" justify="flex-start" {...props}>
+      <Flex h="3rem" justify="flex-start" {...props}>
         {listItems.map((item, i) => (
           <Button
             key={i}
@@ -78,7 +78,7 @@ const CategoryButtonList = ({ listItems, ...props }) => {
             textProps={{ m: { l: ".5rem" }, p: { t: "0.1rem" } }}
           />
         ))}
-      </Div>
+      </Flex>
     )
   );
 };
