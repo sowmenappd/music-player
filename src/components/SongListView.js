@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Div, Icon, Text } from "atomize";
 
-import { Card, CenteredView, HeaderTitle } from "components";
+import { Card, CustomCard, CenteredView, HeaderTitle } from "components";
 import { isDesktop, isMobile } from "hooks/useDevice";
 import Button from "./Button";
 
@@ -42,23 +42,14 @@ const SongView = ({ song, isPlaying }) => {
   const [hovered, setHovering] = useState(false);
 
   return (
-    <Card
-      w="100%"
-      h="100%"
-      noshadow
-      d="flex"
-      flexDir="row"
+    <CustomCard
       justify="space-between"
+      hoverShadow="4"
+      m={{ b: ".45rem" }}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
-      <Div
-        h="50px"
-        d="flex"
-        flexDir="column"
-        align="flex-start"
-        justify="space-between"
-      >
+      <Div h="50px" d="flex" flexDir="column" justify="space-between">
         <Div d="flex" flexDir="row" align="center">
           <Text fontFamily="primary" textWeight="500">
             {song.title}
@@ -96,7 +87,7 @@ const SongView = ({ song, isPlaying }) => {
           />
         </Div>
       )}
-    </Card>
+    </CustomCard>
   );
 };
 
