@@ -21,7 +21,7 @@ export default function Player() {
         <Row p={{ t: isMobile() || isTablet() ? "2rem" : "4rem" }} m="0rem">
           {!isMobile() && (
             <Col size={"4"} m="0rem">
-              <SongListView songs={songs} />
+              <SongListView songs={songs} currentSongId={0} />
             </Col>
           )}
           <Col size={isMobile() ? "12" : "8"} m="0rem">

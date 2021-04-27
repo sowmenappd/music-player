@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Div, Text } from "atomize";
+import { Div, Icon, Text } from "atomize";
 
 import { Card, CenteredView, HeaderTitle } from "components";
 import { isDesktop, isMobile } from "hooks/useDevice";
 import Button from "./Button";
 
-const SongListView = ({ songs, ...props }) => {
+const SongListView = ({ songs, currentSongId, ...props }) => {
   return (
     <Div>
       <Card noshadow p="0" {...props}>
@@ -24,21 +24,21 @@ const SongListView = ({ songs, ...props }) => {
         overflow="auto"
         scroll-y="hidden"
       >
-        <SongList songs={songs} />
+        <SongList songs={songs} currentSongId={currentSongId} />
       </Card>
     </Div>
   );
 };
 
-const SongList = ({ songs }) => (
+const SongList = ({ songs, currentSongId }) => (
   <CenteredView flexDir="column" p="0">
     {songs?.map((song, i) => (
-      <SongView song={song} key={i} />
+      <SongView song={song} key={i} isPlaying={currentSongId === i} />
     ))}
   </CenteredView>
 );
 
-const SongView = ({ song }) => {
+const SongView = ({ song, isPlaying }) => {
   const [hovered, setHovering] = useState(false);
 
   return (
@@ -59,9 +59,12 @@ const SongView = ({ song }) => {
         align="flex-start"
         justify="space-between"
       >
-        <Text fontFamily="primary" textWeight="500">
-          {song.title}
-        </Text>
+        <Div d="flex" flexDir="row" align="center">
+          <Text fontFamily="primary" textWeight="500">
+            {song.title}
+          </Text>
+          {isPlaying && <Icon name="Loading3" m={{ l: ".35rem" }} />}
+        </Div>
         <Text fontFamily="primary" textWeight="300">
           {song.album}
         </Text>
