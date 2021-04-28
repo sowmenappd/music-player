@@ -11,7 +11,7 @@ import {
   SongListView,
   WelcomeUserPanel,
 } from "components";
-import { isDesktop, isMobile, isTablet } from "hooks/useDevice";
+import { isMobile, isTablet } from "hooks/useDevice";
 
 export default function Player() {
   return (
@@ -45,19 +45,21 @@ export default function Player() {
   );
 }
 
-const songs = [
-  { title: "Song 1.mp3", album: "Album 1" },
-  { title: "Song 2.mp3", album: "Album 2" },
-  { title: "Song 3.mp3", album: "Album 3" },
-  { title: "Song 4.mp3", album: "Album 4" },
-  { title: "Song 5.mp3", album: "Album 5" },
-  { title: "Song 6.mp3", album: "Album 6" },
-  { title: "Song 7.mp3", album: "Album 7" },
-  { title: "Song 1.mp3", album: "Album 1" },
-  { title: "Song 2.mp3", album: "Album 2" },
-  { title: "Song 3.mp3", album: "Album 3" },
-  { title: "Song 4.mp3", album: "Album 4" },
-  { title: "Song 5.mp3", album: "Album 5" },
-  { title: "Song 6.mp3", album: "Album 6" },
-  { title: "Song 7.mp3", album: "Album 7" },
-];
+const songs = [];
+
+// const songs = [
+//   { title: "Song 1.mp3", album: "Album 1" },
+//   { title: "Song 2.mp3", album: "Album 2" },
+//   { title: "Song 3.mp3", album: "Album 3" },
+//   { title: "Song 4.mp3", album: "Album 4" },
+//   { title: "Song 5.mp3", album: "Album 5" },
+//   { title: "Song 6.mp3", album: "Album 6" },
+//   { title: "Song 7.mp3", album: "Album 7" },
+//   { title: "Song 1.mp3", album: "Album 1" },
+//   { title: "Song 2.mp3", album: "Album 2" },
+//   { title: "Song 3.mp3", album: "Album 3" },
+//   { title: "Song 4.mp3", album: "Album 4" },
+//   { title: "Song 5.mp3", album: "Album 5" },
+//   { title: "Song 6.mp3", album: "Album 6" },
+//   { title: "Song 7.mp3", album: "Album 7" },
+// ];

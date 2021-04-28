@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Div, Icon, Text } from "atomize";
+import { Div, Icon, Image, Text } from "atomize";
 import CustomScroller from "react-custom-scroller";
 
 import {
@@ -11,14 +11,15 @@ import {
   HeaderTitle,
 } from "components";
 import { isDesktop, isMobile } from "hooks/useDevice";
+import IMAGES from "constants/images";
 
 const SongListView = ({ songs, currentSongId, ...props }) => {
   return (
     <Div>
-      <Card p="0" {...props}>
+      <Card p="0rem" {...props} bg="warning900">
         <HeaderTitle
           title="Up next"
-          bg="info500"
+          justify="flex-start"
           align="center"
           textColor="white"
           h="4rem"
@@ -50,9 +51,13 @@ const SongList = ({ songs, currentSongId }) => (
     }}
   >
     <CenteredView flexDir="column" p={{ r: "2rem" }} bg="transparent">
-      {songs?.map((song, i) => (
-        <SongView song={song} key={i} isPlaying={currentSongId === i} />
-      ))}
+      {songs?.length ? (
+        songs.map((song, i) => (
+          <SongView song={song} key={i} isPlaying={currentSongId === i} />
+        ))
+      ) : (
+        <EmptyView />
+      )}
     </CenteredView>
   </CustomScroller>
 );
@@ -115,5 +120,14 @@ const SongView = ({ song, isPlaying }) => {
     </CustomCard>
   );
 };
+
+const EmptyView = () => (
+  <Flex justify="center" align="center" p="2rem" col>
+    <Image src={IMAGES.empty} m="3rem" w="140pt" />
+    <Text fontFamily="primary" tag="h3" textWeight="300">
+      No songs found
+    </Text>
+  </Flex>
+);
 
 export default SongListView;
