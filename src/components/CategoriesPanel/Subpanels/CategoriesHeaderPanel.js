@@ -1,59 +1,69 @@
 import React from "react";
-import { Text } from "atomize";
+import { Image, Text } from "atomize";
 import { CustomCard, Button, Flex } from "components";
+import IMAGES from "constants/images";
 
 const HeaderSubpanel = ({ onBtnClick, ...props }) => {
   return (
-    <CustomCard bg="#373537" {...props} flexDir="column">
-      <TopText />
-      <CategoryButtonList
-        onBtnClick={onBtnClick}
-        listItems={[
-          {
-            title: "Artists",
-            color: "info",
-            iconName: "UserSolid",
-            iconColor: "white",
-          },
-          {
-            title: "Albums",
-            color: "success",
-            iconName: "EyeSolid",
-            iconColor: "white",
-          },
-          {
-            title: "Genres",
-            color: "brand",
-            iconName: "EyeSolid",
-            iconColor: "white",
-          },
-        ]}
-        m={{ t: "1rem", l: "1rem" }}
-      />
+    <CustomCard bg="#373537" {...props}>
+      <Flex h="10rem" overflow="hidden">
+        <Flex col justify="space-between">
+          <TopText />
+          <CategoryButtonList
+            onBtnClick={onBtnClick}
+            listItems={[
+              {
+                title: "Artists",
+                color: "info",
+                iconName: "UserSolid",
+                iconColor: "white",
+              },
+              {
+                title: "Albums",
+                color: "success",
+                iconName: "EyeSolid",
+                iconColor: "white",
+              },
+              {
+                title: "Genres",
+                color: "brand",
+                iconName: "EyeSolid",
+                iconColor: "white",
+              },
+            ]}
+            m={{ t: "1rem", l: "1rem" }}
+          />
+        </Flex>
+        <Flex w="100%" h="60%" p="0rem" justify="flex-end" align="flex-start">
+          <Image w="50%" src={IMAGES.collection} />
+        </Flex>
+      </Flex>
     </CustomCard>
   );
 };
 
 const TopText = () => (
-  <Flex h="5rem" col justify="space-around">
-    <Text
-      fontFamily="primary"
-      tag="h2"
-      textAlign="left"
-      textColor="white"
-      textWeight="500"
-    >
-      Gallery
-    </Text>
-    <Text
-      fontFamily="primary"
-      tag="h3"
-      textAlign="left"
-      textColor="white"
-      textWeight="300"
-    >
-      Filter songs by artist, genre, and albums.
-    </Text>
+  <Flex h="5rem" justify="space-between" overflow="hidden">
+    <Flex col justify="space-around">
+      <Text
+        fontFamily="primary"
+        tag="h2"
+        textAlign="left"
+        textColor="white"
+        textWeight="500"
+      >
+        Gallery
+      </Text>
+      <Text
+        fontFamily="primary"
+        tag="h3"
+        textAlign="left"
+        textColor="white"
+        textWeight="300"
+      >
+        Filter songs by artist, genre, and albums.
+      </Text>
+    </Flex>
   </Flex>
 );
 
