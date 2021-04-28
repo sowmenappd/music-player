@@ -7,6 +7,7 @@ import Flex from "components/Flex";
 import HeaderTitle from "components/HeaderTitle";
 import Inputfield from "components/Inputfield";
 import LoadingButton from "components/LoadingButton";
+import Modal from "components/Modal";
 
 // views
 import CategoriesPanel from "components/CategoriesPanel";
@@ -25,6 +26,7 @@ export {
   HeaderTitle,
   Inputfield,
   LoadingButton,
+  Modal,
   CategoriesPanel,
   FileUploaderPanelView,
   WelcomeUserPanel,
