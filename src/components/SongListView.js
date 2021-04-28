@@ -30,6 +30,9 @@ const SongListView = ({ songs, currentSongId, ...props }) => {
         m={{ b: isMobile() ? "1rem" : "0rem" }}
         overflow="auto"
         scroll-y="hidden"
+        bg="#2f2d4580"
+        p="0rem"
+        textColor="white"
       >
         <SongList songs={songs} currentSongId={currentSongId} />
       </Card>
@@ -42,11 +45,11 @@ const SongList = ({ songs, currentSongId }) => (
     style={{
       overflowY: "scroll",
       width: "100%",
-      paddingLeft: 20,
-      paddingRight: 20,
+      paddingLeft: 5,
+      paddingRight: 0,
     }}
   >
-    <CenteredView flexDir="column" p={{ r: "2rem" }}>
+    <CenteredView flexDir="column" p={{ r: "2rem" }} bg="transparent">
       {songs?.map((song, i) => (
         <SongView song={song} key={i} isPlaying={currentSongId === i} />
       ))}
@@ -61,6 +64,8 @@ const SongView = ({ song, isPlaying }) => {
     <CustomCard
       justify="space-between"
       hoverShadow="4"
+      hoverBg="#2f2d45"
+      bg="clear"
       m={{ b: ".45rem" }}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
@@ -87,19 +92,23 @@ const SongView = ({ song, isPlaying }) => {
             bg="success600"
             m={{ r: ".5rem" }}
             hoverBg="success700"
-            color="white"
+            iconColor="white"
+            transition
             onClick={null}
           />
           <Button
+            bg="transparent"
             hoverBg="transparent"
+            hoverShadow="4"
             name="Plus"
             size={isDesktop() ? "32px" : "28px"}
             rounded="md"
             h="3rem"
             w="3rem"
             m={{ l: ".5rem" }}
-            color="info700"
-            onClick={() => console.log("clicked")}
+            iconColor="white"
+            transition
+            onClick={null}
           />
         </Flex>
       )}
