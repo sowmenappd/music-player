@@ -39,9 +39,14 @@ const SongListView = ({ songs, currentSongId, ...props }) => {
 
 const SongList = ({ songs, currentSongId }) => (
   <CustomScroller
-    style={{ overflowY: "scroll", width: "100%", paddingRight: 20 }}
+    style={{
+      overflowY: "scroll",
+      width: "100%",
+      paddingLeft: 20,
+      paddingRight: 20,
+    }}
   >
-    <CenteredView flexDir="column" p="0">
+    <CenteredView flexDir="column" p={{ r: "2rem" }}>
       {songs?.map((song, i) => (
         <SongView song={song} key={i} isPlaying={currentSongId === i} />
       ))}
