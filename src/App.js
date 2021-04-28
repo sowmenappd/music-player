@@ -1,5 +1,5 @@
 import { Div } from "atomize";
-import Player from "pages/Player";
+import Player from "layout/Player";
 
 function App() {
   return (
