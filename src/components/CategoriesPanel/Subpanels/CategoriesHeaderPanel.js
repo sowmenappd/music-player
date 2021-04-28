@@ -2,11 +2,12 @@ import React from "react";
 import { Text } from "atomize";
 import { CustomCard, Button, Flex } from "components";
 
-const HeaderSubpanel = ({ ...props }) => {
+const HeaderSubpanel = ({ onBtnClick, ...props }) => {
   return (
     <CustomCard bg="#373537" {...props} flexDir="column">
       <TopText />
       <CategoryButtonList
+        onBtnClick={onBtnClick}
         listItems={[
           {
             title: "Artists",
@@ -27,7 +28,7 @@ const HeaderSubpanel = ({ ...props }) => {
             iconColor: "white",
           },
         ]}
-        m={{ t: "1rem", l: "2rem" }}
+        m={{ t: "1rem", l: "1rem" }}
       />
     </CustomCard>
   );
@@ -56,7 +57,7 @@ const TopText = () => (
   </Flex>
 );
 
-const CategoryButtonList = ({ listItems, ...props }) => {
+const CategoryButtonList = ({ onBtnClick, listItems, ...props }) => {
   return (
     listItems && (
       <Flex h="3rem" justify="flex-start" {...props}>
@@ -65,16 +66,13 @@ const CategoryButtonList = ({ listItems, ...props }) => {
             key={i}
             name={item.iconName}
             text={item.title}
-            onClick={null}
+            onClick={() => onBtnClick?.(item.title)}
             rounded="circle"
             size="16px"
             iconColor={item.iconColor}
             bg={`${item.color}700`}
             hoverBg={`${item.color}800`}
-            p={{ r: "1.5rem", l: "1rem" }}
             m={{ r: ".5rem" }}
-            shadow="3"
-            hoverShadow="4"
             textProps={{ m: { l: ".5rem" }, p: { t: "0.1rem" } }}
           />
         ))}

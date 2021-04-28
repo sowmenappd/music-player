@@ -7,7 +7,6 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Div, ThemeProvider } from "atomize";
-import { isDesktop } from "hooks/useDevice";
 
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();

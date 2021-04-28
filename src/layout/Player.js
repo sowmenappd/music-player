@@ -1,15 +1,17 @@
-import { Col, Div, Row } from "atomize";
+import { Button, Col, Div, Icon, Row, Text } from "atomize";
 import React from "react";
 
 import {
-  CenteredView,
-  SongListView,
   CategoriesPanel,
-  WelcomeUserPanel,
-  PlayerButtonPanelView,
+  CenteredView,
   FileUploaderPanelView,
+  Flex,
+  Modal,
+  PlayerButtonPanelView,
+  SongListView,
+  WelcomeUserPanel,
 } from "components";
-import { isMobile, isTablet } from "hooks/useDevice";
+import { isDesktop, isMobile, isTablet } from "hooks/useDevice";
 
 export default function Player() {
   return (
@@ -27,6 +29,7 @@ export default function Player() {
               <FileUploaderPanelView m={{ t: "1rem" }} />
               <PlayerButtonPanelView m={{ t: "1rem" }} />
               <CategoriesPanel m={{ t: "1rem" }} />
+
               {isMobile() && (
                 <SongListView
                   songs={songs}
