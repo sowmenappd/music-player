@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Modal as Mdl, Icon } from "atomize";
 
 import { Flex } from "components";
@@ -11,19 +10,14 @@ const Modal = ({
   containerProps,
   ...props
 }) => {
-  const [_isOpen, setOpen] = useState(isOpen);
-
   const ModalBody = ({ content, ...containerProps }) => (
     <Flex {...containerProps}>{content}</Flex>
   );
 
   return (
     <Mdl
-      isOpen={_isOpen}
-      onClose={() => {
-        setOpen(false);
-        onClose?.();
-      }}
+      isOpen={isOpen}
+      onClose={onClose}
       align="center"
       rounded="md"
       {...props}
@@ -34,10 +28,7 @@ const Modal = ({
         top="1rem"
         right="1rem"
         size="16px"
-        onClick={() => {
-          setOpen(false);
-          onClose?.();
-        }}
+        onClick={onClose}
         cursor="pointer"
         {...cancelIconProps}
       />
